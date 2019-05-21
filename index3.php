@@ -7,13 +7,21 @@
 
 </head>
 <body>
+<?php
+if (isset($_POST["height"]) && isset($_POST["weight"])) {
+    $weight = (int) $_POST["weight"];
+    $height = (int) $_POST["height"];
+    $bmi = $weight/($height*$height);
+    echo "Chỉ sô BMI là : " . $bmi;
+}
+?>
 <div>
 <h1>chỉ số bmi</h1>
 <form name="bmi" action="" method="post">
     <div class="form-group">
         <label>Chiều cao</label>
         <input type="text" class="form-control" name="height" value="">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
     </div>
     <div class="form-group">
         <label>cân nặng</label>
